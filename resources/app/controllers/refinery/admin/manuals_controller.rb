@@ -4,6 +4,8 @@ module Refinery
 
       crudify :'refinery/manual'
 
+      before_filter :restrict_controller, :except => [:show]
+
       # overwriting crudified show
       def show
         #send_file(@manual.attachment, :type => 'application/pdf', :disposition => 'attachment') 
